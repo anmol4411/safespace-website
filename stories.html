@@ -31,7 +31,7 @@
   </header>
 
   <!-- Hero Banner -->
-  <section class="hero text-white text-center py-5" style="background: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;">
+  <section class="hero text-white text-center py-5" style="background: url('background-image.png') center/cover no-repeat;">
     <div class="bg-dark bg-opacity-75 p-5">
       <h1>Real People. Real Stories.</h1>
       <p class="lead">Read anonymous experiences shared by others. You're not alone.</p>
@@ -41,36 +41,36 @@
   <!-- Stories Section -->
   <div class="container py-5">
     <h2 class="text-center mb-4">Community Voices</h2>
-    <div class="row g-4">
+    <div class="row g-4" id="user-stories">
+      <!-- LocalStorage stories will be injected here -->
+    </div>
 
+    <div class="row g-4 mt-4">
+      <!-- Static sample stories -->
       <div class="col-md-6">
         <div class="card p-4 shadow-sm about-card">
           <h5>Anonymous</h5>
           <p>"There were days I felt completely lost. SafeSpace gave me the courage to open up."</p>
         </div>
       </div>
-
       <div class="col-md-6">
         <div class="card p-4 shadow-sm about-card">
           <h5>Anonymous</h5>
           <p>"Just reading others' experiences reminded me I wasn't alone. I'm grateful for this space."</p>
         </div>
       </div>
-
       <div class="col-md-6">
         <div class="card p-4 shadow-sm about-card">
           <h5>Anonymous</h5>
           <p>"Sharing my story anonymously was healing. It was my first step toward recovery."</p>
         </div>
       </div>
-
       <div class="col-md-6">
         <div class="card p-4 shadow-sm about-card">
           <h5>Anonymous</h5>
           <p>"SafeSpace felt like a friend who listens without judging. I'm finally hopeful."</p>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -80,8 +80,25 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Load stories from localStorage
+    const storiesContainer = document.getElementById('user-stories');
+    const storedStories = JSON.parse(localStorage.getItem("userStories")) || [];
 
+    storedStories.forEach((story) => {
+      const col = document.createElement("div");
+      col.className = "col-md-6";
+
+      col.innerHTML = `
+        <div class="card p-4 shadow-sm about-card">
+          <h5>${story.name || 'Anonymous'}</h5>
+          <p>"${story.text}"</p>
+        </div>
+      `;
+
+      storiesContainer.appendChild(col);
+    });
+  </script>
 </body>
 </html>

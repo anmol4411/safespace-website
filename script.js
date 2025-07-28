@@ -39,3 +39,50 @@ window.addEventListener('scroll', () => {
     scrollBtn.style.display = 'none';
   }
 });
+
+// Save story to localStorage
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('storyForm');
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim() || 'Anonymous';
+      const title = document.getElementById('title').value.trim();
+      const story = document.getElementById('story').value.trim();
+
+      if (title && story) {
+        const newStory = { name, title, story };
+        const stories = JSON.parse(localStorage.getItem('userStories')) || [];
+        stories.push(newStory);
+        localStorage.setItem('userStories', JSON.stringify(stories));
+
+        alert('Story shared successfully!');
+        form.reset();
+      }
+    });
+  }
+
+  // Display stories on stories.html
+  const storiesContainer = document.getElementById('userStories');
+  if (storiesContainer) {
+    const stories = JSON.parse(localStorage.getItem('userStories')) || [];
+    if (stories.length === 0) {
+      storiesContainer.innerHTML = '<p class="text-center">No user stories yet.</p>';
+    } else {
+      stories.reverse().forEach(({ name, title, story }) => {
+        const card = document.createElement('div');
+        card.className = 'col-md-6';
+        card.innerHTML = `
+          <div class="card p-4 shadow-sm about-card">
+            <h5>${name}</h5>
+            <h6 class="text-muted">${title}</h6>
+            <p>${story}</p>
+          </div>
+        `;
+        storiesContainer.appendChild(card);
+      });
+    }
+  }
+});

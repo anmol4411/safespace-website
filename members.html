@@ -4,24 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Meet the Team – SafeSpace</title>
-  <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    h2 {
+      font-weight: 600;
+      color: #333;
+    }
+
     .team-card {
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
       border: none;
-      transition: transform 0.3s ease;
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #ffffff;
     }
 
     .team-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
 
     .team-photo {
       width: 100%;
       height: 300px;
       object-fit: cover;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+
+    .card-body {
+      padding: 1.2rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .social-icons a {
+      margin: 0 6px;
+      color: #555;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #007bff;
+    }
+
+    footer {
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 767px) {
+      .team-photo {
+        height: 250px;
+      }
     }
   </style>
 </head>
@@ -52,57 +103,161 @@
   <section class="py-5 bg-light text-center">
     <div class="container">
       <h2 class="mb-4">Meet the Team</h2>
-      <div class="row g-4">
+      <div class="row g-4 justify-content-center">
 
         <!-- Member 1 -->
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4">
           <div class="card team-card">
-            <img src="img/founder.jpg" alt="Founder" class="team-photo">
+            <img src="images/anmol profile pic 1.jpg" alt="Founder" class="team-photo">
             <div class="card-body">
               <h5 class="card-title">Anmol</h5>
               <p class="card-text">Founder & Lead Developer</p>
+              <div class="social-icons">
+                <a href="https://www.linkedin.com/in/anmol-sharma-44a268344/" title="LinkedIn" data-bs-toggle="tooltip"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/anmol4411" title="GitHub" data-bs-toggle="tooltip"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/anmolsharmaaaaaaa/" title="Instagram" data-bs-toggle="tooltip"><i class="fab fa-instagram"></i></a>
+
+              </div>
+              <button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalAnmol">More Info</button>
             </div>
           </div>
         </div>
 
-        <!-- Member 2 -->
-        <div class="col-md-4">
+        <!-- Member 2 (Dev – UI/UX Designer) -->
+        <div class="col-md-6 col-lg-4">
           <div class="card team-card">
-            <img src="img/member1.jpg" alt="Member" class="team-photo">
+            <img src="images/dev profile pic.jpg" alt="Member" class="team-photo">
             <div class="card-body">
-              <h5 class="card-title">Akhilesh Bajpee</h5>
+              <h5 class="card-title">Dev</h5>
               <p class="card-text">UI/UX Designer</p>
+              <div class="social-icons">
+                <a href="https://www.linkedin.com/in/devsingh067/" title="LinkedIn" data-bs-toggle="tooltip"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Devsingh0648" title="GitHub" data-bs-toggle="tooltip"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/its_dev_skingh/" title="Instagram" data-bs-toggle="tooltip"><i class="fab fa-instagram"></i></a>
+
+              </div>
+              <button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalDev">More Info</button>
             </div>
           </div>
         </div>
 
         <!-- Member 3 -->
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4">
           <div class="card team-card">
-            <img src="img/member2.jpg" alt="Member" class="team-photo">
+            <img src="images/soumil.jpg.jpg" alt="Member" class="team-photo">
             <div class="card-body">
               <h5 class="card-title">Soumil Kumar</h5>
               <p class="card-text">Frontend Developer</p>
+              <div class="social-icons">
+                <a href="https://www.linkedin.com/in/soumil-kumar-9b8593311/" title="LinkedIn" data-bs-toggle="tooltip"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/soumilkumarr" title="GitHub" data-bs-toggle="tooltip"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/soumilkumarr/" title="Instagram" data-bs-toggle="tooltip"><i class="fab fa-instagram"></i></a>
+              </div>
+              <button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalSoumil">More Info</button>
             </div>
           </div>
         </div>
 
-        <!-- Member 4 -->
-        <div class="col-md-4">
+        <!-- Member 4 (Akhilesh – Frontend & Writer) -->
+        <div class="col-md-6 col-lg-4">
           <div class="card team-card">
-            <img src="img/member3.jpg" alt="Member" class="team-photo">
+            <img src="images/akhilesh.jpg.jpg" alt="Member" class="team-photo">
             <div class="card-body">
-              <h5 class="card-title">Dev</h5>
-              <p class="card-text">Frontend developer and Content Writer</p>
+              <h5 class="card-title">Akhilesh Bajpee</h5>
+              <p class="card-text">Frontend Developer & Content Writer</p>
+              <div class="social-icons">
+                <a href="https://www.linkedin.com/in/akhilesh-bajpai-580606324/" title="LinkedIn" data-bs-toggle="tooltip"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/akhilesh189" title="GitHub" data-bs-toggle="tooltip"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/akhilesh_4477/" title="Instagram" data-bs-toggle="tooltip"><i class="fab fa-instagram"></i></a>
+              </div>
+              <button class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalAkhilesh">More Info</button>
             </div>
           </div>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALS -->
+  <!-- Anmol -->
+  <div class="modal fade" id="modalAnmol" tabindex="-1" aria-labelledby="modalAnmolLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="modalAnmolLabel">Anmol – Founder & Lead Developer</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Bio:</strong> Anmol is the visionary behind SafeSpace. With a deep passion for mental health tech and clean code, he leads the platform’s core development.</p>
+          <p><strong>Skills:</strong> Full Stack Development, Cloud, Project Management</p>
+          <p><strong>Fun Fact:</strong> Loves late-night coding with coffee ☕</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dev (Now UI/UX Designer) -->
+  <div class="modal fade" id="modalDev" tabindex="-1" aria-labelledby="modalDevLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="modalDevLabel">Dev – UI/UX Designer</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Bio:</strong> Dev is passionate about crafting clean, user-centric designs that improve accessibility and engagement across SafeSpace’s platform.</p>
+          <p><strong>Skills:</strong> Figma, UI Design, Prototyping</p>
+          <p><strong>Fun Fact:</strong> Loves redesigning popular app interfaces 🎨</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Soumil -->
+  <div class="modal fade" id="modalSoumil" tabindex="-1" aria-labelledby="modalSoumilLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="modalSoumilLabel">Soumil Kumar – Frontend Developer</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Bio:</strong> Soumil works on building interactive and responsive frontends. His focus is on making SafeSpace smooth and engaging.</p>
+          <p><strong>Skills:</strong> HTML, CSS, JavaScript, React</p>
+          <p><strong>Fun Fact:</strong> Plays guitar while debugging 🎸</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Akhilesh (Now Frontend & Writer) -->
+  <div class="modal fade" id="modalAkhilesh" tabindex="-1" aria-labelledby="modalAkhileshLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="modalAkhileshLabel">Akhilesh Bajpee – Frontend Developer & Content Writer</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Bio:</strong> Akhilesh balances frontend coding with crafting meaningful content, helping SafeSpace connect deeply with users through design and words.</p>
+          <p><strong>Skills:</strong> JavaScript, SEO Writing, UI Copy</p>
+          <p><strong>Fun Fact:</strong> Writes blogs inspired by real user stories ✍️</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
-  <footer class="text-center py-4 bg-dark text-white">
+  <footer class="text-center py-4 bg-dark text-white mt-5">
     <p>&copy; 2025 SafeSpace. Built with ❤️ by our amazing team.</p>
   </footer>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
+  </script>
 </body>
 </html>
